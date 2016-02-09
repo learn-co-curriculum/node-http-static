@@ -18,7 +18,7 @@ before(function (done) {
     })
     setTimeout(function(){
       done()
-    }, 100)
+    }, 400)
 })
 
 describe('server', function () {
