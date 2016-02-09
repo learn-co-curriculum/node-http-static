@@ -25,3 +25,10 @@ In this lab, you'll build a static file server to serve static files over the HT
 
 
 ### Extra Info
+
+Here are some hints
+
+1. To read `request.url` to get the file name, use `path.join()`.
+1. To boot the server with the value from command-line argument or if not set value 3000, use `port = process.argv[2] || 3000`.
+1. To read the file and serve it to the client, use `binary` mode as in `fs.readFile(filename, 'binary', function(error, file) {...}`
+
