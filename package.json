@@ -17,7 +17,8 @@
   },
   "homepage": "git@github.com:learn-co-curriculum/node-http-static-lab.git/#readme",
   "devDependencies": {
+    "chai": "3.5.0",
     "mocha": "2.4.5",
-    "chai": "3.5.0"
+    "superagent": "^1.7.2"
   }
 }
