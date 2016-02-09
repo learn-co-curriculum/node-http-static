@@ -6,31 +6,29 @@ var http = require('http'),
 
 var server = http.createServer(function(request, response) {
 
-  var uri = url.parse(request.url).pathname,
-    filename = path.join(process.cwd(), uri)
+  var uri = url.parse(request.url).pathname
+  var filename = path.join(process.cwd(), uri)
 
   console.log('Request for %s', uri)
-  var fileStats = fs.stat(filename, function(error, fileStats){
-    if (error || !fileStats.isFile()) {
+  fs.readFile(filename, 'binary', function(error, file) {
+    if ((error && error.code == 'ENOENT') || !file) {
       if (error) console.error(error)
       response.writeHead(404, {'Content-Type': 'text/plain'})
       response.write('404 Not Found\n')
       response.end()
       return
     }
-    console.log('Serving %s', filename)
-    fs.readFile(filename, 'binary', function(error, file) {
-      if(error) {
-        response.writeHead(500, {'Content-Type': 'text/plain'})
-        response.write(error + '\n')
-        response.end()
-        return
-      }
-
-      response.writeHead(200)
-      response.write(file, 'binary')
+    if (error) {
+      console.error(error)
+      response.writeHead(500, {'Content-Type': 'text/plain'})
+      response.write(error + '\n')
       response.end()
-    })
+      return
+    }
+    console.log('Serving %s', filename)
+    response.writeHead(200)
+    response.write(file, 'binary')
+    response.end()
   })
 })
 
