@@ -1,2 +1,21 @@
-# node-http-static
-Node Static File Server
+# Node Static File Server
+
+## Objectives
+
+1.
+1.
+1.
+
+
+## Introduction
+
+In this lab, ...
+
+## Instructions
+
+1.
+2.
+3.
+
+
+### Extra Info

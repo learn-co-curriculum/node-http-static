@@ -1,0 +1,23 @@
+{
+  "name": "node-http-static-lab",
+  "version": "1.0.0",
+  "description": "Node Static File Server",
+  "main": "index.js",
+  "scripts": {
+    "test": "node_modules/mocha/bin/mocha test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:learn-co-curriculum/node-http-static-lab.git"
+  },
+  "author": "Azat Mardan",
+  "license": "ISC",
+  "bugs": {
+    "url": "git@github.com:learn-co-curriculum/node-http-static-lab.git/issues"
+  },
+  "homepage": "git@github.com:learn-co-curriculum/node-http-static-lab.git/#readme",
+  "devDependencies": {
+    "mocha": "2.4.5",
+    "chai": "3.5.0"
+  }
+}
