@@ -42,17 +42,15 @@ describe('server', function () {
       .end(function(error, response){
         expect(response.res.text).to.equal(readme)
         expect(response.res.statusCode).to.equal(200)
-        // expect(response.res.headers['content-type']).to.equal('text/plain')
-        // expect(response.res.headers['content-length']).to.equal(readme.length)
-        // var killResult = child.kill()
-        // expect(killResult).to.be.true
         done()
       })
   })
 })
 
 after(function(){
-  if (typeof killResult == 'undefined') {
-    child.kill()
+  if (typeof child != 'undefined' && child && !child.killed) {
+    var killResult = child.kill()
+    expect(killResult).to.be.true
+    expect(child.killed).to.be.true
   }
 })
