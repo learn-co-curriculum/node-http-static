@@ -46,8 +46,8 @@ describe('server', function () {
         expect(response.res.statusCode).to.equal(200)
         // expect(response.res.headers['content-type']).to.equal('text/plain')
         // expect(response.res.headers['content-length']).to.equal(readme.length)
-        var killResult = child.kill()
-        expect(killResult).to.be.true
+        // var killResult = child.kill()
+        // expect(killResult).to.be.true
         done()
       })
   })
