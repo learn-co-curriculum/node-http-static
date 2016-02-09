@@ -5,10 +5,11 @@ var expect = require('chai').expect,
   path = require('path')
 
 var child
-
+var port = Math.round(1000+Math.random()*1000)
 
 before(function (done) {
-    child = cp.exec('node server.js',
+
+  child = cp.exec('node server.js ' + port,
     function (error, stdout, stderr) {
       expect(stderr).to.equal('')
       if (error !== null) {
@@ -24,7 +25,7 @@ before(function (done) {
 describe('server', function () {
   it('must respond 404 for README-FAKE.md', function(done){
     superagent
-      .get('http://localhost:3000/README-FAKE.md')
+      .get('http://localhost:' + port + '/README-FAKE.md')
       .end(function(error, response){
         expect(response.res.text).to.equal('404 Not Found\n')
         expect(response.res.statusCode).to.equal(404)
@@ -38,7 +39,7 @@ describe('server', function () {
   it('must respond 200 for README.md', function(done){
     var readme = fs.readFileSync(path.join(__dirname, '..', 'README.md'), {encoding: 'utf-8'})
     superagent
-      .get('http://localhost:3000/README.md')
+      .get('http://localhost:' + port + '/README.md')
       .end(function(error, response){
         expect(response.res.text).to.equal(readme)
         expect(response.res.statusCode).to.equal(200)

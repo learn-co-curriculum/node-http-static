@@ -2,7 +2,7 @@
 
 ## Objectives
 
-1. Implement rudimentary static web server 
+1. Implement rudimentary static web server
 1. Use the fs (file system) module which will serve some HTML file like Apache or Nginx web server
 1. Create index.html that will be served by the Node server
 
@@ -15,9 +15,13 @@ In this lab, you'll build a static file server to serve static files over the HT
 
 ## Instructions
 
-1. 
-2.
-3.
+1. Create file `server.js`
+2. Implement HTTP server with `http`
+3. Read `request.url` to get the file name. Hint: use `path.join()`.
+4. Boot the server with the value from command-line argument or if not set value 3000. Hint: use `port = process.argv[2] || 3000`.
+5. Read the file and serve it to the client. Hint: use `binary` mode as in `fs.readFile(filename, 'binary', function(error, file) {...}`
+6. Server must send back 200 on success (along with the file content) and 404 when file not found along with `404 Not Found\n` body.
+7. Run tests with `$ npm install && npm test`, or just `$ npm test`.
 
 
 ### Extra Info

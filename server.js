@@ -7,7 +7,7 @@ var http = require('http'),
 var server = http.createServer(function(request, response) {
 
   var uri = url.parse(request.url).pathname
-  var filename = path.join(process.cwd(), uri)
+  var filename = path.join(__dirname, uri)
 
   console.log('Request for %s', uri)
   fs.readFile(filename, 'binary', function(error, file) {
