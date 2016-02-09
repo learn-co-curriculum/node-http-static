@@ -7,8 +7,7 @@ var expect = require('chai').expect,
 var child
 
 
-describe('server', function () {
-  it('must run', function(done){
+before(function (done) {
     child = cp.exec('node server.js',
     function (error, stdout, stderr) {
       expect(stderr).to.equal('')
@@ -19,8 +18,7 @@ describe('server', function () {
     })
     setTimeout(function(){
       done()
-    }, 400)
-  })
+    }, 100)
 })
 
 describe('server', function () {
