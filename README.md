@@ -32,3 +32,8 @@ Here are some hints:
 1. To boot the server with the value from command-line argument or if not set value 3000, use `port = process.argv[2] || 3000`.
 1. To read the file and serve it to the client, use `binary` mode as in `fs.readFile(filename, 'binary', function(error, file) {...}`
 
+### Bonus
+
+You can score bonus points for playing with the solution using debugger. There are mutliptle way to do so. You can use next (`n`) or step (`s`), but in most cases you would have to look at many statements if you want to get to the callback (i.e., request handler). The easiest way to do it, is to put a `debugger` statement in the callback, start the server in debug mode and submit a request with CURL or browser. 
+
+To put a `debugger` statement, simply type `debugger` in the `server.js` file and save it. To start the server in debug mode, use `node debug server`, then press `c` for continue (`n` is better, because you can move to the next statement). The server will listen for incoming requests. Now, submit your request with CURL, Postman or just by going to the browser. This will stop the debugger at your breakpoint. You can use `repl` or any other commands now. Enjoy the show!
