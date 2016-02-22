@@ -16,12 +16,12 @@ In this lab, you'll build a static file server to serve static files over the HT
 ## Instructions
 
 1. Create file `server.js`
-2. Implement HTTP server with `http`
-3. Read `request.url` to get the file name. 
-4. Boot the server with the value from a command-line argument or if not set value 3000.
-5. Read the file and serve it to the client. Handle the errors accordingly when reading files (404 Not Found).
-6. Server must send back 200 on success (along with the file content) and 404 when file not found along with `404 Not Found\n` body.
-7. Run tests with `npm install && npm test`, or just `npm test`.
+1. Implement HTTP server with `http`
+1. Read `request.url` to get the file name. 
+1. Boot the server with the value from a command-line argument or if not set value 3000.
+1. Read the file and serve it to the client. Handle the errors accordingly when reading files (404 Not Found).
+1. Server must send back 200 on success (along with the file content) and 404 when file not found along with `404 Not Found\n` body.
+1. Run tests with `npm install && npm test`, or just `npm test`.
 
 
 ### Extra Info
