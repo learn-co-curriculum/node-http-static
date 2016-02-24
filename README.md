@@ -16,7 +16,7 @@ In this lab, you'll build a static file server to serve static files over the HT
 ## Instructions
 
 1. Create file `server.js`
-1. Implement HTTP server with `http`
+1. Implement an HTTP server with `http`
 1. Read `request.url` to get the file name. 
 1. Boot the server with the value from a command-line argument or if not set value 3000.
 1. Read the file and serve it to the client. Handle the errors accordingly when reading files (404 Not Found).
@@ -34,6 +34,6 @@ Here are some hints:
 
 ### Bonus
 
-You can score bonus points for playing with the solution using debugger. There are mutliptle way to do so. You can use next (`n`) or step (`s`), but in most cases you would have to look at many statements if you want to get to the callback (i.e., request handler). The easiest way to do it, is to put a `debugger` statement in the callback, start the server in debug mode and submit a request with CURL or browser. 
+You can score bonus points for playing with the your code using debugger. There are multiple way to do so. You can use next (`n`) or step (`s`), but in most cases you would have to look at many statements if you want to get to the callback (i.e., request handler). The easiest way to do it, is to put a `debugger` statement in the callback, start the server in debug mode and submit a request with CURL or browser. 
 
 To put a `debugger` statement, simply type `debugger` in the `server.js` file and save it. To start the server in debug mode, use `node debug server`, then press `c` for continue (`n` is better, because you can move to the next statement). The server will listen for incoming requests. Now, submit your request with CURL, Postman or just by going to the browser. This will stop the debugger at your breakpoint. You can use `repl` or any other commands now. Enjoy the show!
